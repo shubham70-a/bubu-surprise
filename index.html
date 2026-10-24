@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#9b83e8">
+<title>For Bubu 💜</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Baloo+2:wght@500;600;700;800&display=swap');
+:root{--lav:#d9ccff;--purple:#9b83e8;--deep:#6751b6;--ink:#49366e;--paper:#fffaff;--pink:#ffb6d4}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:linear-gradient(160deg,#c9b9ff 0%,#e8dfff 52%,#f8dff0 100%);color:var(--ink);font-family:Nunito,sans-serif;overflow-x:hidden}
+.stars{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}.star{position:absolute;color:#fff;font-size:12px;animation:twinkle 2.8s ease-in-out infinite}.star:nth-child(3n){animation-delay:1s}
+@keyframes twinkle{0%,100%{opacity:.9;transform:scale(1)}50%{opacity:.3;transform:scale(.7)}}
+main{position:relative;z-index:1;width:min(720px,100%);margin:auto;padding:18px 18px 50px}.topline{text-align:center;font-weight:900;letter-spacing:.12em;font-size:.75rem;color:#7862be;margin:8px 0 20px}
+.panel{background:rgba(255,250,255,.86);border:2px solid rgba(255,255,255,.9);border-radius:28px;padding:clamp(20px,5vw,34px);box-shadow:0 15px 35px #7652a222;text-align:center;margin:18px 0;backdrop-filter:blur(6px)}
+h1,h2{font-family:'Baloo 2',cursive;margin:6px 0;color:#7258bf;line-height:1.05}h1{font-size:clamp(2.6rem,10vw,4.6rem)}h2{font-size:clamp(2rem,7vw,3rem)}
+p{line-height:1.7}.tiny{font-size:.88rem;color:#8875b6}.heart{font-size:2.5rem;display:inline-block;animation:heartbeat 1.7s infinite}@keyframes heartbeat{50%{transform:scale(1.12)}}
+.photos{display:flex;justify-content:center;align-items:center;gap:clamp(8px,3vw,18px);margin:24px auto 8px;flex-wrap:wrap}
+.photo{width:clamp(82px,25vw,145px);height:clamp(82px,25vw,145px);border-radius:50%;object-fit:cover;border:5px solid white;box-shadow:0 8px 20px #7960b633}
+.btn{border:0;border-radius:999px;background:#8e73dc;color:white;padding:13px 22px;font:800 1rem Nunito,sans-serif;box-shadow:0 7px 0 #6f55ba;cursor:pointer;margin:10px 5px;transition:transform .15s}.btn:active{transform:translateY(3px);box-shadow:0 4px 0 #6f55ba}.btn.pink{background:#f29bc4;box-shadow:0 7px 0 #d77aa5;color:#fff}
+.scene{display:none}.scene.active{display:block;animation:pop .45s ease both}@keyframes pop{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+.envelope{font-size:5rem;line-height:1.2}.letter{background:#fffdfd;border:2px dashed #d7c5ff;border-radius:20px;padding:20px;text-align:left;color:#705b94;line-height:1.85;white-space:pre-line}
+.cake{font-size:6rem;line-height:1.2}.giftrow{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}.gift{font-size:3.4rem;border:2px dashed #cbb9f4;border-radius:20px;padding:14px;background:#fff9ff;cursor:pointer;transition:transform .2s}.gift:hover{transform:translateY(-5px) rotate(-3deg)}
+.note{min-height:30px;color:#8568c5;font-weight:800}.footer{text-align:center;color:#806cb3;font-size:.82rem;padding:12px}
+audio{display:none}
+</style>
+</head>
+<body>
+<div class="stars" id="stars"></div>
+<main>
+  <div class="topline">A LITTLE SURPRISE MADE WITH LOVE ✦</div>
+  <section class="panel scene active" id="scene1">
+    <div class="heart">💜</div>
+    <p class="tiny">For my favourite person</p>
+    <h1>Happy Birthday,<br><span style="color:#ef92bf">Bubu!</span></h1>
+    <p>Someone very special has a tiny surprise waiting for her…</p>
+    <div class="photos">
+      <img class="photo" src="photos/bubu-cake.jpg" alt="Bubu">
+      <img class="photo" src="photos/bubu-smile.jpg" alt="Bubu smiling">
+      <img class="photo" src="photos/bubu-festive.jpg" alt="Bubu">
+    </div>
+    <p class="tiny">Three little moments, one very special girl ✨</p>
+    <button class="btn" onclick="go(2)">Open your surprise 💌</button>
+  </section>
+
+  <section class="panel scene" id="scene2">
+    <div class="envelope">💌</div>
+    <h2>A little letter for you</h2>
+    <p>Some words from my heart, just for you.</p>
+    <div class="letter">Dear Bubu 💗
+
+You make ordinary days feel special, and your smile makes everything a little brighter. I hope this new year of your life brings you all the happiness you deserve, endless reasons to smile, and beautiful memories.
+
+No matter how simple this little surprise is, it comes with lots of love. You are truly special to me.
+
+Happy Birthday, meri Bubu! 💜✨</div>
+    <button class="btn" onclick="go(3)">One more surprise 🎂</button>
+  </section>
+
+  <section class="panel scene" id="scene3">
+    <div class="cake">🎂</div>
+    <h2>Make a wish, Bubu!</h2>
+    <p>Close your eyes for a second, make your sweetest wish, then tap below. ✨</p>
+    <div style="font-size:2rem">🕯️ 🕯️ 🕯️</div>
+    <button class="btn pink" onclick="wish()">I made a wish! 💫</button>
+    <div class="note" id="wishNote"></div>
+    <button class="btn" onclick="go(4)">Open your gifts 🎁</button>
+  </section>
+
+  <section class="panel scene" id="scene4">
+    <h2>Little gifts for you</h2>
+    <p>Pick any gift to reveal a tiny message 💝</p>
+    <div class="giftrow">
+      <button class="gift" onclick="gift(0)" aria-label="Gift one">🎁</button>
+      <button class="gift" onclick="gift(1)" aria-label="Gift two">🎀</button>
+      <button class="gift" onclick="gift(2)" aria-label="Gift three">💝</button>
+    </div>
+    <div class="note" id="giftNote">Choose one, birthday girl!</div>
+    <button class="btn" onclick="go(1)">Replay from the beginning ↺</button>
+  </section>
+  <div class="footer">Made just for Bubu, with love 💜</div>
+</main>
+
+<audio id="song" autoplay loop preload="auto">
+  <source src="audio/jaan-ban-gaye.mp3" type="audio/mpeg">
+</audio>
+<button id="playSong" class="btn pink" style="position:fixed;bottom:14px;right:14px;z-index:5;display:none">♫ Play our song</button>
+<script>
+const starBox=document.getElementById('stars');
+for(let i=0;i<42;i++){const s=document.createElement('span');s.className='star';s.textContent=['✦','✧','·','♡'][i%4];s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';s.style.animationDelay=(Math.random()*3)+'s';s.style.fontSize=(8+Math.random()*12)+'px';starBox.appendChild(s)}
+function go(n){document.querySelectorAll('.scene').forEach(s=>s.classList.remove('active'));document.getElementById('scene'+n).classList.add('active');window.scrollTo({top:0,behavior:'smooth'});try{document.getElementById('song').play()}catch(e){}}
+function wish(){document.getElementById('wishNote').textContent='Wish sent to the universe! ✨💜';for(let i=0;i<18;i++){const h=document.createElement('div');h.textContent=['💜','✨','💗'][i%3];h.style.cssText='position:fixed;left:'+Math.random()*100+'vw;top:'+Math.random()*80+'vh;font-size:24px;pointer-events:none;z-index:9;animation:pop .8s ease both';document.body.appendChild(h);setTimeout(()=>h.remove(),1200)}}
+const msgs=['Your first gift: one million hugs, just for you! 🤗','Your second gift: a lifetime supply of smiles 💗','Your third gift: a reminder that you are loved. Always. 💜'];
+function gift(i){document.getElementById('giftNote').textContent=msgs[i]}
+const song=document.getElementById('song'),playSong=document.getElementById('playSong');
+function trySong(){song.play().then(()=>playSong.style.display='none').catch(()=>playSong.style.display='block')}
+window.addEventListener('load',trySong,{once:true});
+playSong.addEventListener('click',()=>song.play().then(()=>playSong.style.display='none').catch(()=>{}));
+</script>
+</body>
+</html>
